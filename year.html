@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #myProgress {
+        width: 100%;
+        background-color: rgb(255, 253, 253);
+      }
+      
+      #myBar {
+        width: 1%;
+        height: 30px;
+        background-color: #2c3a4b;
+        
+      }
+
+    </style>
+</head>
+<body>
+    <h1>JavaScript Progress Bar</h1>
+
+<div id="myProgress">
+  <div id="myBar">om naladkar</div>
+</div>
+
+<br>
+<button onclick="move()">Click Me</button> 
+
+
+<script>
+var date1 = new Date();
+var date2 = new Date("12/31/2022");
+
+// To calculate the time difference of two dates
+var Difference_In_Time = date2.getTime() - date1.getTime();
+
+
+// To calculate the no. of days between two dates
+var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+var t  = 365 - Difference_In_Days;
+
+var percent = (t/365)*100;
+
+function move(){
+    if(t>0){
+        var elem = document.getElementById("myBar");   
+        elem.style.width = percent.toFixed(2) + "%";
+       elem.innerHTML = percent.toFixed(2)+ "%";
+        
+    }
+     
+}
+
+
+
+//To display the final no. of days (result)
+
+</script>
+</body>
+</html>
